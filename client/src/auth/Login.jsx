@@ -27,7 +27,7 @@ const Login = ({ setAlert, login, isAuthenticated }) => {
     if (!email || !password) {
       debugger;
       console.log('Please enter login credentials to continue');
-      setAlert('Please enter login credentials to continue', 'danger');
+      setAlert('Error: Please enter login credentials to continue', 'danger');
     } else {
       login(email, password);
     }
@@ -44,13 +44,8 @@ const Login = ({ setAlert, login, isAuthenticated }) => {
       </div>
       <div className='login-main-section'>
         <form onSubmit={onSubmit}>
-          {/* <div
-            className='errorText'
-            name='errorMsg'
-            hidden={this.state.isFormValid}
-          >
-            <h3>Error: Invalid user credentials!</h3>
-          </div> */}
+          <Alert />
+
           <div>
             <label className='userId-label'>User ID</label>
             <Input
@@ -76,7 +71,7 @@ const Login = ({ setAlert, login, isAuthenticated }) => {
             />
           </div>
           <br></br>
-          <Alert />
+
           <div className='login-button-field'>
             {/* <Button className='login-button' onClick={this.onSubmit}>Log In</Button> */}
             <Button className='login-button' type='submit' value='Login'>
